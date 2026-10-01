@@ -1,0 +1,3 @@
+﻿ОТКРЫВАТЬ: VacationWeb.sln
+Проект внутри: VacationWeb.njsproj
+Сначала прочитайте START-HERE.txt. npm install / npm ci не нужны.

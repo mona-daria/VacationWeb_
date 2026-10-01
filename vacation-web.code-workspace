@@ -1,0 +1,11 @@
+{
+  "folders": [{"path": "."}],
+  "settings": {"files.encoding": "utf8", "editor.tabSize": 4},
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {"type":"node","request":"launch","name":"Веб: демонстрация без БД","program":"${workspaceFolder}/server/demo.mjs","cwd":"${workspaceFolder}","console":"integratedTerminal","skipFiles":["<node_internals>/**"]},
+      {"type":"node","request":"launch","name":"Веб: PostgreSQL из .env","program":"${workspaceFolder}/server/index.mjs","runtimeArgs":["--env-file=${workspaceFolder}/.env"],"cwd":"${workspaceFolder}","console":"integratedTerminal","skipFiles":["<node_internals>/**"]}
+    ]
+  }
+}

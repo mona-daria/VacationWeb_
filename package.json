@@ -1,0 +1,26 @@
+{
+  "name": "vacation-web",
+  "version": "1.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "start": "node --env-file=.env server/index.mjs",
+    "dev": "node --env-file=.env --watch server/index.mjs",
+    "demo": "node server/demo.mjs",
+    "init": "node --env-file=.env server/admin.mjs",
+    "db:check": "node --env-file=.env server/check-db.mjs",
+    "password:reset": "node --env-file=.env server/reset-password.mjs",
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "doctor": "node tools/doctor.cjs"
+  },
+  "dependencies": {
+    "pg": "^8.16.3",
+    "exceljs": "^4.4.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.3.14"
+  }
+}

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">16.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42B8D847-59A1-4B15-9F8F-DB707EDC2DF1}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>launcher\start.js</StartupFile>
+    <ScriptArguments>--demo</ScriptArguments>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <Name>VacationWeb</Name>
+    <RootNamespace>VacationWeb</RootNamespace>
+    <NodeExePath Condition="'$(NodeExePath)' == '' And Exists('$(ProgramW6432)\nodejs\node.exe')">$(ProgramW6432)\nodejs\node.exe</NodeExePath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <StartWebBrowser>False</StartWebBrowser>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".editorconfig" />
+    <Content Include=".env.example" />
+    <Content Include=".env.local.example" />
+    <Content Include=".gitignore" />
+    <Content Include="CHANGELOG.md" />
+    <Content Include="Check-Database.cmd" />
+    <Content Include="Check-Environment.cmd" />
+    <Content Include="DEPENDENCIES-SHA256.json" />
+    <Content Include="docs\ACCEPTANCE.md" />
+    <Content Include="docs\API.md" />
+    <Content Include="docs\CODE-MAP.html" />
+    <Content Include="docs\DATABASE.md" />
+    <Content Include="docs\DEPLOYMENT.md" />
+    <Content Include="docs\DEVELOPER.md" />
+    <Content Include="docs\ORG-AND-USERS.md" />
+    <Content Include="docs\TEST-REPORT.md" />
+    <Content Include="docs\VS2019.md" />
+    <Content Include="Initialize-Database.cmd" />
+    <Content Include="config\appsettings.json">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="launcher\package.json" />
+    <Compile Include="launcher\start.js" />
+    <Content Include="LIBRARIES.txt" />
+    <Content Include="OPEN-IN-VS2019.txt" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Compile Include="public\app.js" />
+    <Content Include="public\favicon.svg" />
+    <Content Include="public\index.html" />
+    <Content Include="public\styles.css" />
+    <Content Include="README.md" />
+    <Content Include="Reset-Password.cmd" />
+    <Content Include="Run-Tests.cmd" />
+    <Compile Include="server\admin.mjs" />
+    <Compile Include="server\check-db.mjs" />
+    <Compile Include="server\config.mjs" />
+    <Compile Include="server\db.mjs" />
+    <Compile Include="server\demo.mjs" />
+    <Compile Include="server\domain.mjs" />
+    <Compile Include="server\export.mjs" />
+    <Compile Include="server\http.mjs" />
+    <Compile Include="server\index.mjs" />
+    <Compile Include="server\reset-password.mjs" />
+    <Content Include="server\schema.sql" />
+    <Compile Include="server\service.mjs" />
+    <Content Include="Start-Demo.cmd" />
+    <Content Include="START-HERE.txt" />
+    <Content Include="Start-Server.cmd" />
+    <Content Include="TECHNOLOGIES.txt" />
+    <Compile Include="tests\config.test.mjs" />
+    <Compile Include="tests\workflow.test.mjs" />
+    <Compile Include="tools\build-code-map.cjs" />
+    <Compile Include="tools\doctor.cjs" />
+    <Content Include="tools\hash.mjs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="vacation-web.code-workspace" />
+    <Compile Include="vs-start.cjs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="docs\" />
+    <Folder Include="launcher\" />
+    <Folder Include="config\" />
+    <Folder Include="public\" />
+    <Folder Include="server\" />
+    <Folder Include="tests\" />
+    <Folder Include="tools\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VacationNodeTargets Condition="Exists('$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets')">$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets</VacationNodeTargets>
+    <VacationNodeTargets Condition="'$(VacationNodeTargets)' == ''">$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets</VacationNodeTargets>
+  </PropertyGroup>
+  <Import Project="$(VacationNodeTargets)" />
+</Project>
